@@ -27,7 +27,7 @@ function Hospital() {
                         Speciality:- {element.special} <br />
                         Contact:- {element.contact}
                         </p>
-                    <a href={`/${element.name}/doctors`} className="btn btn-primary">View Doctors</a>
+                    <a href={`/${element.name}/doctors`} className="btn btn-warning">View Doctors</a>
                 </div>
         </div>
         )})}

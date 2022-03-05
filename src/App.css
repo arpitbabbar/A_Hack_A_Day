@@ -21,3 +21,12 @@ body {
   z-index: -1;
   /* position: relative; */
 }
+
+.card {
+  background-color: blanchedalmond;
+  border-radius: 10%;
+}
+
+.card img {
+  border-radius: 10%;
+}
