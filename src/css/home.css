@@ -1,0 +1,52 @@
+.home {
+    font-family: Comic Sans MS;
+    font-style: italic;
+    font-weight: bold;
+    margin-top: 10%;
+    z-index: 0;
+
+}
+
+.buttons {
+    margin-top: 8%;
+}
+
+.button {
+  display: block;
+  padding: .75rem 1.25rem;
+  border-radius: 10rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1.7rem;
+  letter-spacing: .15rem;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  text-decoration: none;
+}
+  .button:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0cf;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  .button:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: darken(#0cf, 15%);
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+
+  
