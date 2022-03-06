@@ -3,7 +3,6 @@ import '../css/doctor.css'
 
 function Doctors() {
 
-    const [details, setdetails] = useState({ name: '', age: '', qual: '', exp: '', contact: '' });
     const [bool4, setbool4] = useState(false)
 
 
@@ -43,23 +42,56 @@ function Doctors() {
     const handleClick = (e) => {
         setbool4(true);
         console.log(bool4);
-        var dage = document.getElementById('age');
+        var dage = document.getElementById('age').textContent;
         var dcontact = document.getElementById('contact').textContent;
         var dqual = document.getElementById('qual').textContent;
         var dexp = document.getElementById('exp').textContent;
         var dname = document.getElementById('name').textContent;
-        setdetails({ name: dname, age: dage, exp: dexp, qual: dqual, contact: dqual });
-        console.log(dage.textContent);
-        console.log(dcontact)
-        console.log(dqual)
-        console.log(dexp)
-        console.log(dname);
+        setdetails({ name: dname, age: dage, exp: dexp, qual: dqual, contact: dcontact });
+        // console.log(dage);
+        // console.log(dcontact)
+        // console.log(dqual)
+        // console.log(dexp)
+        // console.log(dname);
+        // console.log(details);
+        e.preventDefault();
 
     }
 
-    const handleClick2 = () => {
-
+    const [details, setdetails] = useState({ name: '', age: '', qual: '', exp: '', contact: '' });
+    const [patient, setpatient] = useState({ pname: '', pcontact: '', page: '', pdate: '' });
+    const [dbData, setdbData] = useState({number:'',pname:'',page:'',hospital:'',doctorName:'',doctorAge:'',doctorContact:'',date:''});
+    const handleClick2 = (e) => {
+        console.log(details);
+        var pname = document.getElementById('pname').value;
+        var pcontact = document.getAnimations('pcontact').value;
+        var page = document.getAnimations('page').value;
+        var pdate = document.getAnimations('pdate').value;
+        // console.log(pname);
+        // console.log(pcontact);
+        // console.log(page);
+        // console.log(pdate);
+        setpatient({ pname: pname, pcontact: pcontact, page: page, pdate: pdate });
+        console.log(patient);
+        alert("Appointment Scheduled")
+        setdbData({number:patient.pcontact,pname:patient.pname,page:patient.page,hospital:array[1],doctorName:details.name,doctorAge:details.age,doctorContact:details.contact,date:patient.pdate});
+        saveData();
+        // e.preventDefault();
     }
+    const saveData = async () => {
+        console.log("Saving into DB");
+        console.log(patient);
+        console.log(dbData);
+        const response = await fetch("http://localhost:3001/api/scheduleAppointment", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({dbData}) // body data type must match "Content-Type" header
+        })
+        const note = await response.json();
+    
+      }
 
 
     return (
@@ -147,11 +179,11 @@ function Doctors() {
                                     <label for="pdate" class="form-label">Appointment Date</label>
                                     <input type="date" class="form-control" id="pdate" placeholder='Enter Appointment Date' />
                                 </div>
-                                
+
                             </form>
 
                         </p>
-                        <a href="#" onClick={handleClick2} className="btn btn-success">Schedule</a>
+                        <a onClick={handleClick2} className="btn btn-success">Schedule</a>
                     </div>
                 </div>
             </div>}

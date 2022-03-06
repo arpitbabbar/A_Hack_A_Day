@@ -26,9 +26,6 @@ router.post('/scheduleAppointment',async (req,res)=>{
 router.get('/checkAppointmentStatus/:number',async (req,res)=>{
     console.log(req.body);
     try{
-        // const {number} = req.body.number;
-        // console.log(req.body);
-        // console.log(req.body.number)
         const num = req.params.number;
         console.log(num);
         const user = await Details.findOne({number:num});
