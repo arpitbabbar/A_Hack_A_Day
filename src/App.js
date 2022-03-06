@@ -35,7 +35,7 @@ function App() {
           <Route path='/checkappointment' exact><Check /></Route>
         </Switch>
         <Switch>
-          <Route path='/status' exact><Status /></Route>
+          <Route path='/status/*' exact><Status /></Route>
         </Switch>
       </Router>
     </div>

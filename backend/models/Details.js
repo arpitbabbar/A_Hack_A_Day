@@ -7,24 +7,27 @@ const { Schema } = mongoose;
         required:true,
         unique:true
     },
-    name:{
+    pname:{
         type:String,
         required:true
     },
-    age:{
+    page:{
         type:Number,
         required:true
-    },
-    email:{
-        type:String,
-        required:true,
-        unique:true
     },
     hospital:{
         type:String,
         required:true
     },
     doctorName:{
+        type:String,
+        required:true
+    },
+    doctorAge:{
+        type:Number,
+        required:true
+    },
+    doctorContact:{
         type:String,
         required:true
     },
