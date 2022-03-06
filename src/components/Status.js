@@ -26,7 +26,7 @@ function Status() {
 
     const getDetails = async () => {
         // console.log( + " getdeatils");
-          const response = await fetch("http://localhost:3001/api//checkAppointmentStatus/8901904401");
+          const response = await fetch("http://localhost:3001/api//checkAppointmentStatus/9876380260");
            console.log(response);
             const json = await response.json();
           //   res.send(json);
