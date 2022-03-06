@@ -9,6 +9,8 @@ import Home from './components/Home';
 import About from './components/About';
 import Hospital from './components/Hospital';
 import Doctors from './components/Doctors';
+import Check from './components/Check';
+import Status from './components/Status';
 
 function App() {
   
@@ -28,6 +30,12 @@ function App() {
         </Switch>
         <Switch>
           <Route path='/*/doctors' exact><Doctors /></Route>
+        </Switch>
+        <Switch>
+          <Route path='/checkappointment' exact><Check /></Route>
+        </Switch>
+        <Switch>
+          <Route path='/status' exact><Status /></Route>
         </Switch>
       </Router>
     </div>

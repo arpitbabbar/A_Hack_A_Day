@@ -11,7 +11,7 @@ function Home() {
     </div>
     <div className='buttons d-flex justify-content-around'>
     <a href="/bookappointment" className="button">Book an Appointment</a>
-    <a href="#" className="button">Appointment Status</a>
+    <a href="/checkappointment" className="button">Appointment Status</a>
 
     </div>
     </>
